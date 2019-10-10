@@ -12,7 +12,7 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: '$(system.defaultWorkingDirectory)/backend/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
@@ -20,9 +20,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'sp'
-    appType: 'webAppLinux'
-    appName: 'goldenfeet'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'

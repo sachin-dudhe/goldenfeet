@@ -1,0 +1,16 @@
+
+<div class="page-wrap">
+  <div class="sidebar" data-color="red" data-image="" [ngStyle]="getWidth()">
+      <app-sidebar (sidebarClosed)="isSidebarClosed($event)" [width]="width"></app-sidebar>
+      <div class="sidebar-background" style="background-image: url(assets/img/sidebar-5.jpg)"></div>
+  </div>
+
+  <div class="main-panel" [ngStyle]="getBodyWidth()">
+      <navbar-cmp></navbar-cmp>
+      <router-outlet></router-outlet>
+      <div *ngIf="isMap('maps')">
+          <footer-cmp></footer-cmp>
+      </div>
+  </div>
+
+</div>

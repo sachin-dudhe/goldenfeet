@@ -1,0 +1,16 @@
+.row > div > button {
+    font-size: 12px;
+    width: 80px;
+    line-height: 1;
+    height: 40px;
+}
+
+.row1 {
+    margin-right: 5px;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.row > div > button:active {
+    background-color: lightblue;
+}

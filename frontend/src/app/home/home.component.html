@@ -1,0 +1,103 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+            <!-- <div class="modal fade" id="myModal" role="dialog">
+                    <p>hiiii</p>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                        <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>                
+                    </div>
+                </div> -->
+
+                
+        <div class="row row1">
+            <div class="col-md-1"><button type="button" class="btn btn-secondary" (click)="todayClicked()" [ngStyle]="getTodayColor()">2019</button></div>
+            <div class="col-md-1"><button type="button" class="btn btn-secondary" (click)="monthClicked()" [ngStyle]="getMonthColor()">2018</button></div>
+            <div class="col-md-1"><button type="button" class="btn btn-secondary" (click)="monthsClicked()" [ngStyle]="getMonthsColor()">2017</button></div>
+            <!-- <div class="col-md-1"><button type="button" class="btn btn-secondary" (click)="yearClicked()" [ngStyle]="getYearColor()">This Year</button></div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card" style="height:150px">
+                    <div class="card-body">
+                        <h5 class="card-title">CO2 Balance</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Remaining Carbon Points</h6>
+                        <p class="card-text">700/1200</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card" style="height:150px">
+                    <div class="card-body">
+                        <h5 class="card-title">Redeemable Points</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Estimated Points to be redeemed</h6>
+                        <p class="card-text">200</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card" style="height:150px">
+                    <div class="card-body">
+                        <h5 class="card-title">Extra Spends</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Extra points spent</h6>
+                        <p class="card-text">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card" style="height:150px">
+                    <div class="card-body">
+                        <h5 class="card-title">Best Month</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">CO2 Used</h6>
+                        <p class="card-text">July (50 points)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card" style="height:150px">
+                    <div class="card-body">
+                        <h5 class="card-title">Badges Earned</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">For Reducing CO2</h6>
+                        <p class="card-text">5</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card" style="height:150px">
+                    <div class="card-body">
+                        <h5 class="card-title">Lifetime Spends</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">CO2 Used</h6>
+                        <p class="card-text">2500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <lbd-chart [title]="'CO2 by Source'" [subtitle]="''" [addIcon]="'true'" (addClicked)="onAddClick($event)"
+                    [chartClass]="'ct-perfect-fourth'" [chartType]="emailChartType" [chartData]="emailChartData"
+                    [legendItems]="emailChartLegendItems" [withHr]="true" [footerIconClass]="'fa fa-clock-o'"
+                    [footerText]="'Co2 Stats'">
+                </lbd-chart>
+            </div>
+            <div class="col-md-8">
+                <lbd-chart [title]="'My CO2 Trends'" [subtitle]="''" [chartType]="hoursChartType"
+                    [chartData]="hoursChartData" [chartOptions]="hoursChartOptions"
+                    [chartResponsive]="hoursChartResponsive" [legendItems]="hoursChartLegendItems" [withHr]="true"
+                    [footerIconClass]="'fa fa-history'" [footerText]="'Updated 3 minutes ago'">
+                </lbd-chart>
+            </div>
+        </div>
+
+    </div>
+</div>
